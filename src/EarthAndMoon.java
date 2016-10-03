@@ -1,7 +1,4 @@
-// Class EarthAndMoon
-// this is ANOTHER comment
-
-// omg hi
+//deleted comments, testing
 import java.lang.Thread;
 import acm.program.*;
 import acm.graphics.*;
