@@ -1,3 +1,6 @@
+// Class EarthAndMoon
+// this is ANOTHER comment
+
 import acm.program.*;
 import acm.graphics.*;
 import java.awt.*;
