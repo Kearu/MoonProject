@@ -3,31 +3,40 @@ import java.lang.Thread;
 import acm.program.*;
 import acm.graphics.*;
 import java.awt.*;
+import java.lang.Math;
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+///////REFERENCE FOR PROJECT//////////////////////////////////////////////////////////////////
+//http://firsttimeprogrammer.blogspot.com/2014/12/earth-moon-system-orbiting-around-sun.html//
+//////////////////////////////////////////////////////////////////////////////////////////////
 public class EarthAndMoon extends GraphicsProgram {
 	
 	public static final int MOON_RADIUS = 3 * 10;
 	public static final int EARTH_RADIUS = 13 * 10;
-	public static double moonWidth;
-	public static double moonHeight;
+	public static int moonWidth;
+	public static int moonHeight;
+	private Thread moonAni;
+	
+	int earthWidth;
+	int earthHeight;
 	
 	public void run() {
 		this.resize(2500,2500);
 		//setSize(600, 400);
 		//this.resize(1500,1500);
 		
-		moonWidth = (getWidth() + 1700) / 2;
-		moonHeight = (getHeight() + 1250) / 2;
+		moonWidth = 800;
+		moonHeight = 500;
 		
-		int earthWidth = (getWidth() + 900) / 2;
-		int earthHeight = (getHeight()+ 700) / 2;
+		earthWidth = 900;
+		earthHeight = 700;
 		
-		//moon(moonWidth, moonHeight, MOON_RADIUS, true, Color.BLACK);
-		earth(earthWidth, earthHeight, EARTH_RADIUS, true, Color.RED);
+		
+		earth(earthWidth, earthHeight, EARTH_RADIUS, true, Color.GREEN);
 		AnimatedMoon startAnimation = new AnimatedMoon();
-		Thread moonAni = new Thread(startAnimation);
+		moonAni = new Thread(startAnimation);
 		moonAni.start();
-		startAnimation.run();
+		//startAnimation.run();
 	}
 	
 	public void earth(int x, int y, int radius, boolean isFilled, Color color) {
